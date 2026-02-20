@@ -1,2 +1,10 @@
 res://default_env.tres
 res://scenes/MainLevel.tscn
+res://scenes/PlatformBlue.gd
+res://scenes/BlueShip.tscn
+res://scenes/blue_ship.gd
+res://meteor.gd
+res://scenes/meteor.gd
+res://scenes/Meteor.tscn
+res://scenes/out_of_bounds.gd
+res://scenes/ObjectiveArea.gd
