@@ -125,6 +125,7 @@ position = Vector2(576, 668)
 shape = SubResource("RectangleShape2D_4t260")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1387410533]
+process_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1279954739]
 visible = false
@@ -132,7 +133,29 @@ offset_left = 172.0
 offset_top = 274.0
 offset_right = 379.0
 offset_bottom = 297.0
-scale = Vector2(4, 4)
+theme_override_font_sizes/font_size = 64
 text = "Anjay jago banget bang!😎"
 
+[node name="RestartButton" type="Button" parent="CanvasLayer" unique_id=249289776]
+process_mode = 2
+visible = false
+offset_left = 388.0
+offset_top = 394.0
+offset_right = 508.0
+offset_bottom = 447.0
+theme_override_font_sizes/font_size = 32
+text = "Restart"
+
+[node name="NextButton" type="Button" parent="CanvasLayer" unique_id=1066790748]
+process_mode = 2
+visible = false
+offset_left = 559.0
+offset_top = 395.0
+offset_right = 730.0
+offset_bottom = 448.0
+theme_override_font_sizes/font_size = 32
+text = "Next Level"
+
 [connection signal="body_entered" from="ObjectiveArea" to="ObjectiveArea" method="_on_ObjectiveArea_body_entered"]
+[connection signal="pressed" from="CanvasLayer/RestartButton" to="ObjectiveArea" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/NextButton" to="ObjectiveArea" method="_on_next_button_pressed"]
