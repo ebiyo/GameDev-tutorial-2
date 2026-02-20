@@ -9,5 +9,5 @@ func _process(delta: float) -> void:
 	pass
 	
 func _on_body_entered(body):
-	if body.name == "BlueShip":
+	if body.name == "BlueShip" || body.name == "GreenShip":
 		get_tree().reload_current_scene()

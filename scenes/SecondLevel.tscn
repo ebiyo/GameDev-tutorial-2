@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ml0md1hol1cm"]
 
 [ext_resource type="Script" uid="uid://bsuv2svmaqypq" path="res://scenes/PlatformBlue.gd" id="1_crcml"]
+[ext_resource type="Texture2D" uid="uid://ci3pvctr3wj0h" path="res://assets/space_background.jpg" id="1_mlhxy"]
 [ext_resource type="PackedScene" uid="uid://y5a4e3ajuy2r" path="res://scenes/StonePlatform.tscn" id="2_jll4c"]
 [ext_resource type="PackedScene" uid="uid://datfp8kxjrjg" path="res://scenes/BlueShip.tscn" id="3_42n16"]
 [ext_resource type="Texture2D" uid="uid://cbwgix0inp3tk" path="res://assets/snow.png" id="3_mlhxy"]
@@ -26,33 +27,38 @@ size = Vector2(1173.5, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4t260"]
 size = Vector2(1173.5, 20)
 
-[node name="MainLevel" type="Node" unique_id=832108525]
+[node name="SecondLevel" type="Node" unique_id=832108525]
 
-[node name="PlatformBlue" type="Node2D" parent="." unique_id=1028510209]
+[node name="Background" type="Sprite2D" parent="." unique_id=658239062]
+position = Vector2(586, 326)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_mlhxy")
+
+[node name="PlatformSnow" type="Node2D" parent="." unique_id=1028510209]
 position = Vector2(35, 565)
 script = ExtResource("1_crcml")
 
-[node name="SnowPlatform3" parent="PlatformBlue" unique_id=1127170183 instance=ExtResource("2_jll4c")]
+[node name="SnowPlatform3" parent="PlatformSnow" unique_id=1127170183 instance=ExtResource("2_jll4c")]
 
-[node name="Sprite2D" parent="PlatformBlue/SnowPlatform3" index="0" unique_id=324092146]
+[node name="Sprite2D" parent="PlatformSnow/SnowPlatform3" index="0" unique_id=324092146]
 texture = ExtResource("3_mlhxy")
 
-[node name="SnowPlatform4" parent="PlatformBlue" unique_id=266156621 instance=ExtResource("2_jll4c")]
+[node name="SnowPlatform4" parent="PlatformSnow" unique_id=266156621 instance=ExtResource("2_jll4c")]
 position = Vector2(70, 0)
 
-[node name="Sprite2D" parent="PlatformBlue/SnowPlatform4" index="0" unique_id=324092146]
+[node name="Sprite2D" parent="PlatformSnow/SnowPlatform4" index="0" unique_id=324092146]
 texture = ExtResource("3_mlhxy")
 
-[node name="SnowPlatform" parent="PlatformBlue" unique_id=964098601 instance=ExtResource("2_jll4c")]
+[node name="SnowPlatform" parent="PlatformSnow" unique_id=964098601 instance=ExtResource("2_jll4c")]
 position = Vector2(560, -241)
 
-[node name="Sprite2D" parent="PlatformBlue/SnowPlatform" index="0" unique_id=324092146]
+[node name="Sprite2D" parent="PlatformSnow/SnowPlatform" index="0" unique_id=324092146]
 texture = ExtResource("3_mlhxy")
 
-[node name="SnowPlatform2" parent="PlatformBlue" unique_id=1594265889 instance=ExtResource("2_jll4c")]
+[node name="SnowPlatform2" parent="PlatformSnow" unique_id=1594265889 instance=ExtResource("2_jll4c")]
 position = Vector2(630, -241)
 
-[node name="Sprite2D" parent="PlatformBlue/SnowPlatform2" index="0" unique_id=324092146]
+[node name="Sprite2D" parent="PlatformSnow/SnowPlatform2" index="0" unique_id=324092146]
 texture = ExtResource("3_mlhxy")
 
 [node name="GreenShip" parent="." unique_id=150247224 instance=ExtResource("3_42n16")]
@@ -178,8 +184,9 @@ text = "Previous Level"
 [connection signal="pressed" from="CanvasLayer/RestartButton" to="ObjectiveArea" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/NextButton" to="ObjectiveArea" method="_on_next_button_pressed"]
 
-[editable path="PlatformBlue/SnowPlatform3"]
-[editable path="PlatformBlue/SnowPlatform4"]
-[editable path="PlatformBlue/SnowPlatform"]
-[editable path="PlatformBlue/SnowPlatform2"]
+[editable path="PlatformSnow/SnowPlatform3"]
+[editable path="PlatformSnow/SnowPlatform4"]
+[editable path="PlatformSnow/SnowPlatform"]
+[editable path="PlatformSnow/SnowPlatform2"]
 [editable path="GreenShip"]
+[editable path="Meteors/Meteor2"]

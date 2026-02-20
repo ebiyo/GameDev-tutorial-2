@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cdoksexcakmop"]
 
 [ext_resource type="PackedScene" uid="uid://y5a4e3ajuy2r" path="res://scenes/StonePlatform.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://b66kc7sdsqvhg" path="res://assets/space_bg_3.jpg" id="1_wcvik"]
 [ext_resource type="PackedScene" uid="uid://datfp8kxjrjg" path="res://scenes/BlueShip.tscn" id="2"]
 [ext_resource type="Script" uid="uid://bsuv2svmaqypq" path="res://scenes/PlatformBlue.gd" id="3"]
 [ext_resource type="Script" uid="uid://x2rdmjyr1ttw" path="res://scenes/ObjectiveArea.gd" id="4"]
@@ -25,6 +26,11 @@ size = Vector2(1173.5, 20)
 size = Vector2(1173.5, 20)
 
 [node name="MainLevel" type="Node" unique_id=832108525]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=702764950]
+position = Vector2(586, 326)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_wcvik")
 
 [node name="PlatformBlue" type="Node2D" parent="." unique_id=1028510209]
 position = Vector2(35, 565)
