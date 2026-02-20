@@ -36,10 +36,10 @@ script = ExtResource("3")
 position = Vector2(70, 0)
 
 [node name="StonePlatform" parent="PlatformBlue" unique_id=964098601 instance=ExtResource("1")]
-position = Vector2(560, -241)
+position = Vector2(999, 31)
 
 [node name="StonePlatform2" parent="PlatformBlue" unique_id=1594265889 instance=ExtResource("1")]
-position = Vector2(630, -241)
+position = Vector2(1069, 31)
 
 [node name="BlueShip" parent="." unique_id=150247224 instance=ExtResource("2")]
 position = Vector2(72.7009, 421.901)
@@ -52,13 +52,14 @@ max_speed = 1200.0
 
 [node name="ObjectiveArea" type="Area2D" parent="." unique_id=779178061]
 script = ExtResource("4")
+target_scene_path = "res://scenes/SecondLevel.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveArea" unique_id=670694693]
-position = Vector2(1082, 40)
+position = Vector2(1068, 517)
 shape = SubResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="ObjectiveArea" unique_id=1545912824]
-position = Vector2(1082, 40)
+position = Vector2(1069, 517)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_xum0q")
 
@@ -67,39 +68,40 @@ position = Vector2(969, 583)
 rotation = -3.1415925
 
 [node name="Meteor2" parent="Meteors" unique_id=71035417 instance=ExtResource("6_yxyfn")]
-position = Vector2(544, 73.99994)
+position = Vector2(526, 150.99985)
 rotation = -2.268928
 
 [node name="Meteor7" parent="Meteors" unique_id=1522138054 instance=ExtResource("6_yxyfn")]
+position = Vector2(-82.99992, 529)
 
 [node name="Meteor5" parent="Meteors" unique_id=1512741036 instance=ExtResource("6_yxyfn")]
-position = Vector2(434.00012, 518)
+position = Vector2(479, -17.999983)
 rotation = -1.0471976
 
 [node name="Meteor3" parent="Meteors" unique_id=1927485398 instance=ExtResource("6_yxyfn")]
-position = Vector2(687, 13.999878)
+position = Vector2(585, 18.999832)
 rotation = -1.3962636
 
 [node name="Meteor9" parent="Meteors" unique_id=768781936 instance=ExtResource("6_yxyfn")]
-position = Vector2(885.00006, 498.99994)
+position = Vector2(894.0001, 501.99988)
 scale = Vector2(1.5, 1.5)
 
 [node name="Meteor8" parent="Meteors" unique_id=685590935 instance=ExtResource("6_yxyfn")]
-position = Vector2(-80.99994, 290.00003)
+position = Vector2(-104.999916, 415.00003)
 rotation = -3.1415925
 scale = Vector2(1.5, 1.5)
 
 [node name="Meteor6" parent="Meteors" unique_id=1361034573 instance=ExtResource("6_yxyfn")]
-position = Vector2(135.00006, 455)
+position = Vector2(66.00006, 482)
 scale = Vector2(1.9, 1.9)
 
 [node name="Meteor4" parent="Meteors" unique_id=915173516 instance=ExtResource("6_yxyfn")]
-position = Vector2(207, 176)
+position = Vector2(22.000015, 288.00003)
 rotation = -1.5707964
 scale = Vector2(2, 2)
 
 [node name="Meteor" parent="Meteors" unique_id=1780730153 instance=ExtResource("6_yxyfn")]
-position = Vector2(624, 328.99997)
+position = Vector2(522, 333.99994)
 rotation = 3.1415925
 scale = Vector2(2, 2)
 

@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://ml0md1hol1cm"]
+
+[ext_resource type="Script" uid="uid://bsuv2svmaqypq" path="res://scenes/PlatformBlue.gd" id="1_crcml"]
+[ext_resource type="PackedScene" uid="uid://y5a4e3ajuy2r" path="res://scenes/StonePlatform.tscn" id="2_jll4c"]
+[ext_resource type="PackedScene" uid="uid://datfp8kxjrjg" path="res://scenes/BlueShip.tscn" id="3_42n16"]
+[ext_resource type="Texture2D" uid="uid://cbwgix0inp3tk" path="res://assets/snow.png" id="3_mlhxy"]
+[ext_resource type="Script" uid="uid://buha0qve47owk" path="res://scenes/blue_ship.gd" id="4_mlhxy"]
+[ext_resource type="Script" uid="uid://x2rdmjyr1ttw" path="res://scenes/ObjectiveArea.gd" id="5_uafb5"]
+[ext_resource type="Texture2D" uid="uid://3ruxfsvp87ub" path="res://assets/playerShip1_green.png" id="6_uafb5"]
+[ext_resource type="Texture2D" uid="uid://dh610bbucs6rh" path="res://assets/fasilkom.png" id="6_wgy16"]
+[ext_resource type="PackedScene" uid="uid://b5a4ynav86ee6" path="res://scenes/Meteor.tscn" id="7_223sp"]
+[ext_resource type="Script" uid="uid://2ms6txwrircs" path="res://scenes/out_of_bounds.gd" id="8_ahi2w"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(138.75, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcvik"]
+size = Vector2(697, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ib6r"]
+size = Vector2(697, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cvyt"]
+size = Vector2(1173.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t260"]
+size = Vector2(1173.5, 20)
+
+[node name="MainLevel" type="Node" unique_id=832108525]
+
+[node name="PlatformBlue" type="Node2D" parent="." unique_id=1028510209]
+position = Vector2(35, 565)
+script = ExtResource("1_crcml")
+
+[node name="SnowPlatform3" parent="PlatformBlue" unique_id=1127170183 instance=ExtResource("2_jll4c")]
+
+[node name="Sprite2D" parent="PlatformBlue/SnowPlatform3" index="0" unique_id=324092146]
+texture = ExtResource("3_mlhxy")
+
+[node name="SnowPlatform4" parent="PlatformBlue" unique_id=266156621 instance=ExtResource("2_jll4c")]
+position = Vector2(70, 0)
+
+[node name="Sprite2D" parent="PlatformBlue/SnowPlatform4" index="0" unique_id=324092146]
+texture = ExtResource("3_mlhxy")
+
+[node name="SnowPlatform" parent="PlatformBlue" unique_id=964098601 instance=ExtResource("2_jll4c")]
+position = Vector2(560, -241)
+
+[node name="Sprite2D" parent="PlatformBlue/SnowPlatform" index="0" unique_id=324092146]
+texture = ExtResource("3_mlhxy")
+
+[node name="SnowPlatform2" parent="PlatformBlue" unique_id=1594265889 instance=ExtResource("2_jll4c")]
+position = Vector2(630, -241)
+
+[node name="Sprite2D" parent="PlatformBlue/SnowPlatform2" index="0" unique_id=324092146]
+texture = ExtResource("3_mlhxy")
+
+[node name="GreenShip" parent="." unique_id=150247224 instance=ExtResource("3_42n16")]
+position = Vector2(72.7009, 421.901)
+lock_rotation = true
+freeze_mode = 1
+script = ExtResource("4_mlhxy")
+thrust_force = 2400.0
+horizontal_force = 300.0
+max_speed = 1200.0
+
+[node name="Sprite2D" parent="GreenShip" index="0" unique_id=767294473]
+texture = ExtResource("6_uafb5")
+
+[node name="ObjectiveArea" type="Area2D" parent="." unique_id=779178061]
+script = ExtResource("5_uafb5")
+target_scene_path = "res://scenes/MainLevel.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveArea" unique_id=670694693]
+position = Vector2(1082, 40)
+shape = SubResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="ObjectiveArea" unique_id=1545912824]
+position = Vector2(1082, 40)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_wgy16")
+
+[node name="Meteors" type="Node2D" parent="." unique_id=1403441345]
+position = Vector2(969, 583)
+rotation = -3.1415925
+
+[node name="Meteor2" parent="Meteors" unique_id=71035417 instance=ExtResource("7_223sp")]
+position = Vector2(544, 73.99994)
+rotation = -2.268928
+
+[node name="Meteor7" parent="Meteors" unique_id=1522138054 instance=ExtResource("7_223sp")]
+
+[node name="Meteor5" parent="Meteors" unique_id=1512741036 instance=ExtResource("7_223sp")]
+position = Vector2(434.00012, 518)
+rotation = -1.0471976
+
+[node name="Meteor3" parent="Meteors" unique_id=1927485398 instance=ExtResource("7_223sp")]
+position = Vector2(687, 13.999878)
+rotation = -1.3962636
+
+[node name="Meteor9" parent="Meteors" unique_id=768781936 instance=ExtResource("7_223sp")]
+position = Vector2(885.00006, 498.99994)
+scale = Vector2(1.5, 1.5)
+
+[node name="Meteor8" parent="Meteors" unique_id=685590935 instance=ExtResource("7_223sp")]
+position = Vector2(-80.99994, 290.00003)
+rotation = -3.1415925
+scale = Vector2(1.5, 1.5)
+
+[node name="Meteor6" parent="Meteors" unique_id=1361034573 instance=ExtResource("7_223sp")]
+position = Vector2(135.00006, 455)
+scale = Vector2(1.9, 1.9)
+
+[node name="Meteor4" parent="Meteors" unique_id=915173516 instance=ExtResource("7_223sp")]
+position = Vector2(207, 176)
+rotation = -1.5707964
+scale = Vector2(2, 2)
+
+[node name="Meteor" parent="Meteors" unique_id=1780730153 instance=ExtResource("7_223sp")]
+position = Vector2(624, 328.99997)
+rotation = 3.1415925
+scale = Vector2(2, 2)
+
+[node name="OutOfBounds" type="Area2D" parent="." unique_id=54011810]
+script = ExtResource("8_ahi2w")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="OutOfBounds" unique_id=507055724]
+position = Vector2(1180, 321)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_wcvik")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="OutOfBounds" unique_id=1703259293]
+position = Vector2(-29, 313.5)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_6ib6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutOfBounds" unique_id=1199297349]
+position = Vector2(576.25, -19)
+shape = SubResource("RectangleShape2D_2cvyt")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="OutOfBounds" unique_id=1380782197]
+position = Vector2(576, 668)
+shape = SubResource("RectangleShape2D_4t260")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1387410533]
+process_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1279954739]
+visible = false
+offset_left = 172.0
+offset_top = 274.0
+offset_right = 379.0
+offset_bottom = 297.0
+theme_override_font_sizes/font_size = 64
+text = "Anjay jago banget bang!😎"
+
+[node name="RestartButton" type="Button" parent="CanvasLayer" unique_id=249289776]
+process_mode = 2
+visible = false
+offset_left = 388.0
+offset_top = 394.0
+offset_right = 508.0
+offset_bottom = 447.0
+theme_override_font_sizes/font_size = 32
+text = "Restart"
+
+[node name="NextButton" type="Button" parent="CanvasLayer" unique_id=1066790748]
+process_mode = 2
+visible = false
+offset_left = 559.0
+offset_top = 395.0
+offset_right = 730.0
+offset_bottom = 448.0
+theme_override_font_sizes/font_size = 32
+text = "Previous Level"
+
+[connection signal="body_entered" from="ObjectiveArea" to="ObjectiveArea" method="_on_ObjectiveArea_body_entered"]
+[connection signal="pressed" from="CanvasLayer/RestartButton" to="ObjectiveArea" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/NextButton" to="ObjectiveArea" method="_on_next_button_pressed"]
+
+[editable path="PlatformBlue/SnowPlatform3"]
+[editable path="PlatformBlue/SnowPlatform4"]
+[editable path="PlatformBlue/SnowPlatform"]
+[editable path="PlatformBlue/SnowPlatform2"]
+[editable path="GreenShip"]

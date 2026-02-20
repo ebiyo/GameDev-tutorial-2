@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var target_scene_path : String
 @onready var win_label = $"../CanvasLayer/Label"
 @onready var restart_button = $"../CanvasLayer/RestartButton"
 @onready var next_button = $"../CanvasLayer/NextButton"
@@ -18,5 +19,6 @@ func _on_restart_button_pressed():
 	get_tree().reload_current_scene()
 	
 func _on_next_button_pressed():
+	print(target_scene_path)
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Level2.tscn")
+	get_tree().change_scene_to_file(target_scene_path)
